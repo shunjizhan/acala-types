@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 import type { CurrencyId } from '@acala-network/types/interfaces/primitives';
+import type { AccountId, Balance, BlockNumber } from '@acala-network/types/interfaces/runtime';
 import type { Compact, Struct } from '@polkadot/types-codec';
 
 /** @name CollateralAuctionItem */

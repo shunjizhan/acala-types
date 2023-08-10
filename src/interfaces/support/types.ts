@@ -1,6 +1,8 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
+import type { FixedU128 } from '@acala-network/types/interfaces/runtime';
+
 /** @name ExchangeRate */
 export interface ExchangeRate extends FixedU128 {}
 

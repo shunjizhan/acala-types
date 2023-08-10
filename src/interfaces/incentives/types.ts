@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 import type { CurrencyId } from '@acala-network/types/interfaces/primitives';
+import type { AccountId } from '@acala-network/types/interfaces/runtime';
 import type { Enum } from '@polkadot/types-codec';
 
 /** @name PoolId */

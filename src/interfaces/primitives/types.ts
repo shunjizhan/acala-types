@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 import type { EvmAddress } from '@acala-network/types/interfaces/evm';
+import type { Balance } from '@acala-network/types/interfaces/runtime';
 import type { Bytes, Enum, Struct, i128, u128, u32, u8 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
 

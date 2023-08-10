@@ -1,6 +1,7 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
+import type { AccountId, Balance } from '@acala-network/types/interfaces/runtime';
 import type { Rate, Ratio } from '@acala-network/types/interfaces/support';
 import type { Enum, Struct, Vec } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
