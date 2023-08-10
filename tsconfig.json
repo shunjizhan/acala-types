@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "composite": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./build",
+    "paths": {
+      "@acala-network/types": ["src"],
+      "@acala-network/types/*": ["src/*"],
+      // "@polkadot/api/augment": ["src/acala/interfaces/augment-api.ts"],
+      // "@polkadot/types/augment": ["src/acala/interfaces/augment-types.ts"],
+      // "@polkadot/types/lookup": ["src/acala/interfaces/types-lookup.ts"]
+    }
+  },
+  "exclude": ["node_modules", "build"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
+}

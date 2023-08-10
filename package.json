@@ -1,0 +1,46 @@
+{
+  "name": "@acala-network/types",
+  "version": "6.0.0-0",
+  "type": "module",
+  "description": "Acala types augment for @polkadot/api",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "generate": "npm run load:meta && npm run generate:defs && npm run generate:meta",
+    "load:meta": "curl -s -H \"Content-Type: application/json\" -d '{\"id\":\"1\", \"jsonrpc\":\"2.0\", \"method\": \"state_getMetadata\", \"params\":[]}' https://mandala-tc9-rpc.aca-staging.network > metadata.json",
+    "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @acala-network/types/interfaces --endpoint ./metadata.json --input ./src/interfaces",
+    "generate:meta": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @acala-network/types/interfaces --endpoint ./metadata.json  --output ./src/interfaces",
+    "build": "rm -rf build && tsc -b --verbose",
+    "postbuild": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/postbuild.js",
+    "publish": "cd build && npm publish",
+    "deploy": "npm run generate && npm run build && npm run publish"
+  },
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "default": "./index.js"
+    }
+  },
+  "keywords": [
+    "acala",
+    "karura",
+    "types",
+    "polkadot",
+    "api"
+  ],
+  "devDependencies": {
+    "@polkadot/api": "^10.9.1",
+    "@polkadot/typegen": "^10.9.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-jsdoc": "^0.3.38",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  }
+}
