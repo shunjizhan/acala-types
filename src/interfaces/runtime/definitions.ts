@@ -102,6 +102,11 @@ const acalaRuntimeDefs: Definitions = {
   },
 };
 
+/* ---------------
+   runtime types are sepcial:
+   - we need to merge substrate runtime types manually
+   - we need to manually declare runtime api definitions
+                                         --------------- */
 export default {
   rpc: {
     ...substrateRuntimeDefs.rpc,
